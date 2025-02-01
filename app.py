@@ -17,7 +17,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 # Google Sheets Setup
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
-creds = Credentials.from_service_account_file("/home/bonnopitom/mysite/ee-csebrurhasinmanjare3434-0f1939796706.json", scopes=SCOPES) #chnage this credentials path too
+creds = Credentials.from_service_account_file("/etc/secrets/ee-csebrurhasinmanjare3434-0f1939796706.json", scopes=SCOPES) #chnage this credentials path too
 gc = gspread.authorize(creds)
 spreadsheet = gc.open("Leads_Management").sheet1
 
@@ -25,7 +25,7 @@ spreadsheet = gc.open("Leads_Management").sheet1
 tokenizer = BertTokenizer.from_pretrained("huawei-noah/TinyBERT_General_4L_312D")
 
 #change_this_model_path_please
-model = torch.load("/home/bonnopitom/mysite/bert_model.pth")
+model = torch.load("./bert_model.pth")
 
     
 
